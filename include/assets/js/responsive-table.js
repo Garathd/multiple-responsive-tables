@@ -1,91 +1,95 @@
-function responsiveTable(screenSize) {
+$( document ).ready(function() {
 
-    // If media query is below 600px
-   if (screenSize.matches) {
+    function responsiveTable(screenSize) {
 
-       // Array to push up CSS styles too
-       var stylesArray = [];
+        // If media query is below 600px
+    if (screenSize.matches) {
 
-       // Getting the amount of tables
-       var tableCount = $('.responsive-table-container table').length;
-       console.log("Check table count: "+tableCount);
+        // Array to push up CSS styles too
+        var stylesArray = [];
 
-       // Iterate through each table
-       for(a = 0; a <= tableCount; a++) {
+        // Getting the amount of tables
+        var tableCount = $('.responsive-table-container table').length;
+        console.log("Check table count: "+tableCount);
 
-           // Target each indivdual table
-           var tableClass  = ".responsive-table-container:nth-of-type("+(a+1)+") table";
+        // Iterate through each table
+        for(a = 0; a <= tableCount; a++) {
 
-           // Declaring unique table class
-           var newTableClass = "table-"+(a);
+            // Target each indivdual table
+            var tableClass  = ".responsive-table-container:nth-of-type("+(a+1)+") table";
 
-           // Add Unique Class to each table occurence
-           $(tableClass).addClass(newTableClass);
+            // Declaring unique table class
+            var newTableClass = "table-"+(a);
 
-           // Getting Table Headings for Indivdual Classes
-           var tableClassHeading = "."+newTableClass +  " th";
+            // Add Unique Class to each table occurence
+            $(tableClass).addClass(newTableClass);
 
-            // Count the table headings
-           var tableHeadingCount = $(tableClassHeading).length;
+            // Getting Table Headings for Indivdual Classes
+            var tableClassHeading = "."+newTableClass +  " th";
 
-           // Iterate through Table Headings
-           for(i = 0; i < tableHeadingCount; i++) {
+                // Count the table headings
+            var tableHeadingCount = $(tableClassHeading).length;
 
-               // Adding the . notation to make it a class to use with JQuery
-               var editedClass = "."+newTableClass;
-               
-               // Getting the value of the table heading
-               var tableHeading = $(editedClass).find("th").eq(i).html();
+            // Iterate through Table Headings
+            for(i = 0; i < tableHeadingCount; i++) {
 
-               // Creating CSS Style and Setting Table Row (Heading) with Table Heading;
-               var cssRole = editedClass+' td:nth-of-type('+(i+1)+'):before {content: "'+tableHeading+'"}';
+                // Adding the . notation to make it a class to use with JQuery
+                var editedClass = "."+newTableClass;
+                
+                // Getting the value of the table heading
+                var tableHeading = $(editedClass).find("th").eq(i).html();
 
-               // Pushing CSS style to Styles Array
-               stylesArray.push(cssRole);
-       
-           }// close the i for loop
+                // Creating CSS Style and Setting Table Row (Heading) with Table Heading;
+                var cssRole = editedClass+' td:nth-of-type('+(i+1)+'):before {content: "'+tableHeading+'"}';
 
-           
-       } //close the a for loop
+                // Pushing CSS style to Styles Array
+                stylesArray.push(cssRole);
+        
+            }// close the i for loop
 
-
-       // Building the CSS stylesheet
-       var styleSheet = "<style> ";
-
-       // Iterate through each style rule
-       for(q = 0; q < stylesArray.length; q++) {
-
-           // Setting the CSS Rule
-           var indivdualStyleRule = stylesArray[q];
-
-           // Appending the rule to string
-           styleSheet += indivdualStyleRule;
-       }
-
-       // Finished CSS Style
-       var finishedStyleSheet = styleSheet + " </style>";
-
-       // Add Style to HTML
-       $('#custom-css').append(finishedStyleSheet);
+            
+        } //close the a for loop
 
 
-   }// close if for media query
-   
-   else {
+        // Building the CSS stylesheet
+        var styleSheet = "<style> ";
 
-       // Clear all styles that were created
-       $('#custom-css').empty();
+        // Iterate through each style rule
+        for(q = 0; q < stylesArray.length; q++) {
 
-   }// close else
+            // Setting the CSS Rule
+            var indivdualStyleRule = stylesArray[q];
 
-}// close responiveTable function
+            // Appending the rule to string
+            styleSheet += indivdualStyleRule;
+        }
+
+        // Finished CSS Style
+        var finishedStyleSheet = styleSheet + " </style>";
+
+        // Add Style to HTML
+        $('#custom-css').append(finishedStyleSheet);
 
 
-// Set the responsive width for tables. Must match value set in css
-var smallScreenSize = window.matchMedia("(max-width: 600px)");
+    }// close if for media query
+    
+    else {
 
-// Call listener responsiveTable function at run time
-responsiveTable(smallScreenSize); 
+        // Clear all styles that were created
+        $('#custom-css').empty();
 
-// Attach listener function on state changes
-smallScreenSize.addListener(responsiveTable);
+    }// close else
+
+    }// close responiveTable function
+
+
+    // Set the responsive width for tables. Must match value set in css
+    var smallScreenSize = window.matchMedia("(max-width: 600px)");
+
+    // Call listener responsiveTable function at run time
+    responsiveTable(smallScreenSize); 
+
+    // Attach listener function on state changes
+    smallScreenSize.addListener(responsiveTable);
+
+});
