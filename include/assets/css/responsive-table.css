@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+.responsive-table-container {
+    background: #FFFFFF;
+    margin: 2% 1.5%;
+    padding: 1%;
+    color: #555555;
+    font-family: 'Roboto';
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.responsive-table-container table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+/* Table Header Cell and Standard Cell */
+.responsive-table-container th,
+.responsive-table-container td {
+    text-align: left;
+    padding: 8px;
+}
+
+/* Table Headings */
+.responsive-table-container th {
+    color: #555555;
+    background: #DDD;
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* For All Devices Above 600px */
+@media only screen and (min-width: 600px) {
+
+    /* Styles the background color off every odd table row */
+    .responsive-table-container tr:nth-child(odd) {
+        background: #F2F2F2;
+    }
+
+}
+
+/* Close Media Query */
+
+
+/* For All Devices Below 600px */
+@media only screen and (max-width: 600px) {
+
+    .responsive-table-container .container {
+        margin: 3.5% 1.5%;
+    }
+
+    /* Force table to not be like tables anymore */
+    .responsive-table-container table,
+    .responsive-table-container thead,
+    .responsive-table-container tbody,
+    .responsive-table-container th,
+    .responsive-table-container td,
+    .responsive-table-container tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .responsive-table-container thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    /* Add Border to make easier to read*/
+    .responsive-table-container tr {
+        border: 1px solid #ccc;
+    }
+
+    /* Behave  like a "row" */
+    .responsive-table-container td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 60%;
+    }
+
+    .responsive-table-container td:nth-child(1) {
+        background: #DDD;
+    }
+
+    /* Now like a table header */
+    .responsive-table-container td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: 600;
+    }
+
+    /* Hide Table Headings */
+    .responsive-table-container th {
+        display: none;
+    }
+
+}
