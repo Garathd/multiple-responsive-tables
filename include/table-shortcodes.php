@@ -21,9 +21,14 @@ function table_init($atts = array(), $content = null ) {
 add_shortcode('responsive_table', 'table_shortcode');
 
 function table_shortcode($atts = array(), $content = null ) { 
-    
-    // wrap table in container
-    $opening = '<div class="responsive-table-container">';
+
+	if ( ! empty( $atts['id'] ) ) {
+        $id = $atts['id'];
+        $opening = '<div class="responsive-table-container" id="'.$id.'">';
+  	} else {
+  		$opening = '<div class="responsive-table-container">';
+  	}
+
     $closing = '</div>';
 
     $val = $css.$opening.$content.$closing;

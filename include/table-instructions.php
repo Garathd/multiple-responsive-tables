@@ -13,6 +13,11 @@
     <p>Following this you must wrap each table in the following shortcode:</p>
     <p><strong>[responsive_table][/responsive_table]</strong></p>
 
+    &nbsp;
+    
+    <p>If you want to use different css style you can set an ID on the shortcode</p>
+    <p><strong>[responsive_table id="red-table"]</strong></p>
+
 </div>
 
 &nbsp;
