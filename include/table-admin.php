@@ -11,8 +11,8 @@ function responsive_table_admin_menu() {
 		'Responsive Tables Instructions', //page title
 		'Responsive Tables', //menu title
 		'manage_options', //capabilities
-    'responsive_table', //menu slug
-    'responsive_table_instruct', //function
+    	'responsive_table', //menu slug
+    	'responsive_table_instruct', //function
 		'dashicons-editor-table' // icon
 	);
 }
@@ -27,7 +27,7 @@ function responsive_table_instruct() {
 		wp_die('You do not have sufficient permissions!');
 	}
 	
-  include MAIN_DIR . '/include/table-instructions.php';
+  include GDX_RESPONSIVE_TABLE_DIR . '/include/table-instructions.php';
 }
 
 // ---------------------------------------------------------------
