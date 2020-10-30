@@ -54,4 +54,3 @@ function responsive_table_enqueue_style(){
 }
 
 ?>
-
