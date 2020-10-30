@@ -22,7 +22,6 @@ function responsive_table_admin_menu() {
 // ---------------------------------------------------------------
 
 function responsive_table_instruct() {
-	global $wpdb;
 	if (!current_user_can('manage_options')) {
 		wp_die('You do not have sufficient permissions!');
 	}
