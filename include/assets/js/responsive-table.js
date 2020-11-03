@@ -92,4 +92,9 @@ $( document ).ready(function() {
     // Attach listener function on state changes
     smallScreenSize.addListener(responsiveTable);
 
+
+    //remove the breakpoint automatically generated
+    $('#custom-css + br').remove();
+    $('.responsive-table-container + br').remove();
+
 });

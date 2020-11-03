@@ -31,7 +31,8 @@ function table_shortcode($atts = array(), $content = null ) {
 
     $closing = '</div>';
 
-    $val = $css.$opening.$content.$closing;
+    $val = $opening.$content.$closing;
+
     return $val;
 } 
 
