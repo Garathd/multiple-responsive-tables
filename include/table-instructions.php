@@ -124,6 +124,8 @@
             </table>
         </div>
 
+        &nbsp;
+
         <div class="responsive-table-container">
             <table>
                 <tbody>
