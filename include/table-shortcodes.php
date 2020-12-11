@@ -24,7 +24,7 @@ function table_shortcode($atts = array(), $content = null ) {
 
 	if ( ! empty( $atts['id'] ) ) {
         $id = $atts['id'];
-        $opening = '<div class="responsive-table-container" id="'.$id.'">';
+        $opening = '<div class="responsive-table-container" id="gdx-responsive-table-unique-'.$id.'">';
   	} else {
   		$opening = '<div class="responsive-table-container">';
   	}
