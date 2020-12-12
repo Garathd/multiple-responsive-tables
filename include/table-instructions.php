@@ -25,7 +25,7 @@
 
         &nbsp;
 
-        <p>If you want to use different css style you can set an ID on the shortcode</p>
+        <p>If you want to use different css styles you can set an ID on the shortcode</p>
         <p><strong>[responsive_table id="red-table"]</strong></p>
 
     </div>
