@@ -8,9 +8,9 @@
 // [responsive_table]                  
 // ----------------------------------------------------------------
 
-add_shortcode('responsive_table_init', 'table_init');
+add_shortcode('responsive_table_init', 'gdx_designs_responsive_tables_init');
 
-function table_init($atts = array(), $content = null ) { 
+function gdx_designs_responsive_tables_init($atts = array(), $content = null ) { 
     // create dynamic css class to be used with JQuery
     $css = '<div id="custom-css"></div>';
     return $css;
@@ -18,9 +18,9 @@ function table_init($atts = array(), $content = null ) {
 
 ///////////////////////////////////////////////////////////////////
 
-add_shortcode('responsive_table', 'table_shortcode');
+add_shortcode('responsive_table', 'gdx_designs_responsive_tables_shortcode');
 
-function table_shortcode($atts = array(), $content = null ) { 
+function gdx_designs_responsive_tables_shortcode($atts = array(), $content = null ) { 
 
 	if ( ! empty( $atts['id'] ) ) {
         $id = $atts['id'];
